@@ -1,0 +1,68 @@
+package makemytrip.airport.hopping;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class FindRoute {
+	
+	public HashMap<String, Airport> allAirports = new HashMap<String, Airport>();
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FindRoute fr = new FindRoute();
+		fr.allAirports.put("BOM", new Airport("BOM"));
+		List<String> nonReachableAirports = fr.getUnreachableAirports("BOM");
+
+	}
+	
+	List<String> getUnreachableAirports(String city)
+	{
+		Airport airportToStart = allAirports.get(city);
+		HashMap<String, Boolean> allVisitedAirports = new HashMap<String, Boolean>();
+		Set<String> airports = allAirports.keySet();
+		for(String airport : airports)
+		{
+			allVisitedAirports.put(airport, false);
+		}
+		
+		markAllReachableAirport(airportToStart, allVisitedAirports);
+		List<String> nonVisitedAirports = new ArrayList<String>();
+		for(Map.Entry<String, Boolean> entry : allVisitedAirports.entrySet())
+		{
+			if(!entry.getValue())
+			{
+				nonVisitedAirports.add(entry.getKey());
+			}
+		}
+		return nonVisitedAirports;
+	}
+	
+	public void markAllReachableAirport(Airport airport, HashMap<String, Boolean> allVisitedAirports)
+	{
+		LinkedList<Airport> queue = new LinkedList<Airport>();
+		allVisitedAirports.put(airport.getAirportCode(), true);
+		queue.add(airport);
+		
+		while(queue.size() != 0)
+		{
+			Airport a1 = queue.poll();
+			
+			List<Flight> allFlights = a1.getFlights();
+			for(Flight f : allFlights)
+			{
+				String reachableAirportCode = f.getArrivalAirport();
+				if(!allVisitedAirports.get(reachableAirportCode))
+				{
+					allVisitedAirports.put(reachableAirportCode, true);
+					Airport airportToAddInQueue = allAirports.get(reachableAirportCode);
+					queue.add(airportToAddInQueue);
+				}
+			}
+		}
+	}
+}

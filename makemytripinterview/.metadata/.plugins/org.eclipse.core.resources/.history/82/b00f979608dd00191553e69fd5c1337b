@@ -1,0 +1,11 @@
+package com.example.demo;
+
+public class S3CallingService implements Runnable {
+
+	@Override
+	public void run() {
+		Thread.sleep(2000);
+		
+	}
+
+}

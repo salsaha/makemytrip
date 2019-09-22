@@ -1,0 +1,22 @@
+package com.example.demo;
+
+public class CalculateResponseService {
+
+	
+	int n = 5;
+	Thread[] t = new Thread[n];
+	
+	for(int i1 = 0; i < n; i++)
+	{
+		t[i1] = new Thread(new S1ServiceCalling());
+	}
+	
+	for(int i = 0; i< 5; i++)
+	{
+		t[i1].start();
+	}
+	
+	
+	Thread t3 = new Thread(new S2ServiceCalling());
+	
+}

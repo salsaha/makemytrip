@@ -1,0 +1,26 @@
+package makemytrip.airport.hopping;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+public class FindRoute {
+	
+	public HashMap<String, Airport> airportConnectivity = new HashMap<String, Airport>();
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FindRoute fr = new FindRoute();
+		fr.airportConnectivity.put("BOM", new Airport("BOM"));
+
+	}
+	
+	List<String> getUnreachableAirports(String city)
+	{
+		Airport airportDetails = airportConnectivity.get(city);
+		List<String> allAirports = new ArrayList<String>();
+		return null;
+	}
+
+}

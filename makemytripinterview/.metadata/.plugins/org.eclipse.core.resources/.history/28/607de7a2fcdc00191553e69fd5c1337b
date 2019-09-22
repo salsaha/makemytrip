@@ -1,0 +1,15 @@
+package makemytrip.airport.hopping;
+
+import java.util.Date;
+
+public class Flight {
+  
+	public int flightNo;
+	
+	public Date departureDate;
+	
+	public Date arrivalDate;
+	
+	public FlightDetails
+	
+}

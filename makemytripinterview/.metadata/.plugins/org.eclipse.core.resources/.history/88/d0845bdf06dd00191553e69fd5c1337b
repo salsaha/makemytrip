@@ -1,0 +1,11 @@
+package com.example.demo;
+
+public class S1ServiceCalling implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		Thread.sleep(1000);
+	}
+
+}

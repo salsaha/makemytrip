@@ -1,0 +1,67 @@
+package makemytrip.airport.hopping;
+
+import java.util.Date;
+
+public class Flight {
+  
+	public int flightNo;
+	
+	public String departureAirport;
+	
+	public String arrivalAirport;
+	
+	public Date departureDate;
+	
+	public Date arrivalDate;
+	
+	public Flight(int flghtNo, String dAirport, String aAirport, Date dDate, Date aDate)
+	{
+		flghtNo = flghtNo;
+		departureAirport =  dAirport;
+		arrivalAirport = aAirport;
+		departureDate = dDate;
+		arrivalDate = aDate;				
+	}
+
+	public int getFlightNo() {
+		return flightNo;
+	}
+
+	public void setFlightNo(int flightNo) {
+		this.flightNo = flightNo;
+	}
+
+	public String getDepartureAirport() {
+		return departureAirport;
+	}
+
+	public void setDepartureAirport(String departureAirport) {
+		this.departureAirport = departureAirport;
+	}
+
+	public String getArrivalAirport() {
+		return arrivalAirport;
+	}
+
+	public void setArrivalAirport(String arrivalAirport) {
+		this.arrivalAirport = arrivalAirport;
+	}
+
+	public Date getDepartureDate() {
+		return departureDate;
+	}
+
+	public void setDepartureDate(Date departureDate) {
+		this.departureDate = departureDate;
+	}
+
+	public Date getArrivalDate() {
+		return arrivalDate;
+	}
+
+	public void setArrivalDate(Date arrivalDate) {
+		this.arrivalDate = arrivalDate;
+	}
+	
+	
+}

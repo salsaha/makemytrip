@@ -1,0 +1,26 @@
+package makemytrip.airport.hopping;
+
+import java.util.Date;
+
+public class Flight {
+  
+	public int flightNo;
+	
+	public String departureAirport;
+	
+	public String arrivalAirport;
+	
+	public Date departureDate;
+	
+	public Date arrivalDate;
+	
+	public Flight(int flghtNo, String dAirport, String aAirport, Date dDate, Date aDate)
+	{
+		flghtNo = flghtNo;
+		departureAirport = 
+		arrivalArport = 
+		departureDate = dDate;
+		arrivalDate = aDate;				
+	}
+	
+}

@@ -1,0 +1,18 @@
+package com.example.demo;
+
+public class S1ServiceCalling implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		try {
+			Thread.sleep(1000);
+			
+			// New to call the required URL from here.
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
